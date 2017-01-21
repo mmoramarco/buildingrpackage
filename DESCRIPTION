@@ -1,12 +1,21 @@
 Package: buildingrpackage
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Provides Functions For FARS Data
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Matt Moramarco
+Maintainer: Matt Moramarco <moramarco@gmail.com>
+Description: This package is a project for the Coursera class
+    Building R Packages, part of the Mastering Software
+    Development in R course.
+License: MIT
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
+Imports: dplyr,
+    maps,
+    readr,
+    tidyr
+Suggests: knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
