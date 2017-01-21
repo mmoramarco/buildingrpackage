@@ -6,8 +6,10 @@
 #' @param filename A string.
 #' @return This function returns a data frame from reading \code{filename}.
 #' @examples
+#' \dontrun{
 #' fars_read("accident_2014.csv.bz2")
 #' fars_read("accident_2015.csv.bz2")
+#' }
 #' @importFrom readr read_csv
 #' @importFrom dplyr tbl_df
 #'
@@ -46,8 +48,10 @@ make_filename <- function(year) {
 #' @return This function returns a list of data.frames with the
 #'    length of the vector \code{years} and two columns: MONTH and year.
 #' @examples
+#' \dontrun{
 #' fars_read_years(c(2014,2015))
 #' fars_read_years(2013:2015)
+#' }
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select
 #'
@@ -75,7 +79,9 @@ fars_read_years <- function(years) {
 #'    and years as columns. Each combination contains the count of
 #'    accidents.
 #' @examples
+#' \dontrun{
 #' fars_summarize_years(2012:2014)
+#' }
 #' @importFrom dplyr bind_rows
 #' @importFrom dplyr group_by
 #' @importFrom dplyr summarize
@@ -100,7 +106,9 @@ fars_summarize_years <- function(years) {
 #' @return This function returns a plot of the number of accidents
 #' for the specified state.
 #' @examples
+#' \dontrun{
 #' fars_map_state('01',2014)
+#' }
 #' @importFrom dplyr filter
 #' @importFrom maps map
 #' @importFrom graphics points
