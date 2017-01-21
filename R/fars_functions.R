@@ -77,7 +77,7 @@ fars_read_years <- function(years) {
 #' @examples
 #' fars_summarize_years(2012:2014)
 #' @importFrom dplyr bind_rows
-#' @importFrom dplyr group
+#' @importFrom dplyr group_by
 #' @importFrom dplyr summarize
 #' @importFrom tidyr spread
 #'
