@@ -19,7 +19,9 @@ over the vector of years input. All values in the vector years need to be
 convertable into an integer otherwise the make_filename function wll error.
 }
 \examples{
+\dontrun{
 fars_read_years(c(2014,2015))
 fars_read_years(2013:2015)
+}
 }
 

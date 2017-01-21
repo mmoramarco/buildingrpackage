@@ -21,6 +21,8 @@ This function returns an error if either the \code{state.num} or
 \code{year} do not exist in the dataset
 }
 \examples{
+\dontrun{
 fars_map_state('01',2014)
+}
 }
 

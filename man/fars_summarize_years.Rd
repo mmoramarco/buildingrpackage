@@ -19,6 +19,8 @@ Summarizes the count of accidents by month and year for the input
 vector \code{years}.
 }
 \examples{
+\dontrun{
 fars_summarize_years(2012:2014)
+}
 }
 

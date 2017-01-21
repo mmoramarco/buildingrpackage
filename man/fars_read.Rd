@@ -17,7 +17,9 @@ Generates a data frame from a file. If the file does not exist
 the function will stop with an error message.
 }
 \examples{
+\dontrun{
 fars_read("accident_2014.csv.bz2")
 fars_read("accident_2015.csv.bz2")
+}
 }
 
