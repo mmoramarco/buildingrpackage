@@ -1,5 +1,5 @@
-#' 
-#' @description 
+#' @title fars_read
+#' @description
 #' Generates a data frame from a file. If the file does not exist
 #' the function will stop with an error message.
 #'
@@ -10,7 +10,7 @@
 #' fars_read("accident_2015.csv.bz2")
 #' @importFrom readr read_csv
 #' @importFrom dplyr tbl_df
-#' 
+#'
 #' @export
 fars_read <- function(filename) {
         if(!file.exists(filename))
@@ -20,8 +20,8 @@ fars_read <- function(filename) {
         })
         dplyr::tbl_df(data)
 }
-#' 
-#' @description 
+#' @title make_filename
+#' @description
 #' Standardizes a filename based on the year. The value of \code{year}
 #' must be compatible with as.integer otherwise an error will result.
 #'
@@ -36,21 +36,21 @@ make_filename <- function(year) {
         year <- as.integer(year)
         sprintf("accident_%d.csv.bz2", year)
 }
-#' 
-#' @description 
-#' Reads files into a list of data.frames with two columns, MONTH and year, 
+#' @title fars_read_years
+#' @description
+#' Reads files into a list of data.frames with two columns, MONTH and year,
 #' over the vector of years input. All values in the vector years need to be
 #' convertable into an integer otherwise the make_filename function wll error.
 #'
 #' @param years A vector of numbers representing years for analysis
-#' @return This function returns a list of data.frames with the 
+#' @return This function returns a list of data.frames with the
 #'    length of the vector \code{years} and two columns: MONTH and year.
 #' @examples
 #' fars_read_years(c(2014,2015))
 #' fars_read_years(2013:2015)
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select
-#' 
+#'
 #' @export
 fars_read_years <- function(years) {
         lapply(years, function(year) {
@@ -65,8 +65,8 @@ fars_read_years <- function(years) {
                 })
         })
 }
-#' 
-#' @description 
+#' @title fars_summarize_years
+#' @description
 #' Summarizes the count of accidents by month and year for the input
 #' vector \code{years}.
 #'
@@ -89,16 +89,16 @@ fars_summarize_years <- function(years) {
                 dplyr::summarize(n = n()) %>%
                 tidyr::spread(year, n)
 }
-#' 
-#' @description 
+#' @title fars_map_state
+#' @description
 #' This function plots the number of accidents for a specified state.
-#' 
-#' This function returns an error if either the \code{state.num} or 
-#' \code{year] do not exist in the dataset
+#' This function returns an error if either the \code{state.num} or
+#' \code{year} do not exist in the dataset
 #'
 #' @param state.num A number representing a state in the FARS data
 #' @param year A number representing the year for analysis
-#' @return 
+#' @return This function returns a plot of the number of accidents
+#' for the specified state.
 #' @examples
 #' fars_map_state('01',2014)
 #' @importFrom dplyr filter
